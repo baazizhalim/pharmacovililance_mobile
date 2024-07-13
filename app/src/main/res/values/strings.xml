@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">PharmacoVigilance</string>
+
+    <string name="let_s_play">Commencer</string>
+    <string name="what_s_your_name">Quel est votre Nom</string>
+    <string name="welcome_to_pharmacovigilance">Bienvenue à l\'application PharmacoVigilance</string>
+    <string name="svp_taper_votre_nom">SVP taper votre nom</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next">Next</string>
+    <string name="question">Choisir le type d\'enquête</string>
+    <string name="answer1">PHARMACOVIGILANCE</string>
+    <string name="answer2">Liste des Déclarations</string>
+    <string name="answer3">Importer Liste Médicaments</string>
+    <string name="identifiez_vous">Identifiez-vous</string>
+    <string name="tapez_votre_email">Tapez votre email !</string>
+    <string name="email">Email : </string>
+    <string name="mot_de_passe">Mot de passe :</string>
+    <string name="inscription">INSCRIPTION</string>
+    <string name="adresse_prof">Adresse :</string>
+    <string name="domaine">Domaine :</string>
+    <string name="nom">Nom :</string>
+    <string name="pr_nom">Prénom :</string>
+    <string name="t_l_phone">Téléphone :</string>
+    <string name="exercice">Exercice :</string>
+    <string name="pharmaco">PHARMACOVIGILANCE</string>
+    <string name="information_patient">INFORMATION PATIENT</string>
+    <string name="nom_patient">Nom du Patient (3 lettres) </string>
+    <string name="name">Name</string>
+    <string name="pr_nom_patient">Prénom du Patient</string>
+    <string name="taille">taille</string>
+    <string name="taille_patient_cm">Taille du Patient (cm)</string>
+    <string name="age">Age</string>
+    <string name="age_parient">Age du Patient</string>
+    <string name="poids_patient">Poids du Patient (kg)</string>
+    <string name="prenom_patient">Prénom du Patient</string>
+    <string name="genre_patient">Sexe </string>
+    <string name="effets_indesirables1">EFFETS INDESIRABLES MEDICAMENT 1</string>
+    <string name="effets_indesirables2">EFFETS INDESIRABLES MEDICAMENT 2</string>
+    <string name="effets_indesirables3">EFFETS INDESIRABLES MEDICAMENT 3</string>
+    <string name="effets_indesirables">EFFETS INDESIRABLES</string>
+    <string name="d_scription">Déscription de l\'effet indésirable</string>
+    <string name="dur_e_effet">Durée de l\'effet indésirable</string>
+    <string name="date_apparition">Date d\'apparition de l\'effet indérirable</string>
+    <string name="mois">Mois :</string>
+    <string name="heure">Heure :</string>
+    <string name="jour">Jour :</string>
+    <string name="commentaire">Commentaire</string>
+    <string-array name="liste_exercice">
+        <item>Medecin</item>
+        <item>Pharmacien</item>
+        <item>Aide_soignant</item>
+    </string-array>
+    <string-array name="liste_genre">
+        <item>Masculin</item>
+        <item>Féminin</item>
+    </string-array>
+    <string-array name="liste_domaine">
+        <item>Public</item>
+        <item>privé</item>
+    </string-array>
+
+    <string-array name="liste_voie">
+        <item>Intraveineuse</item>
+        <item>Intramusculaire</item>
+        <item>Intraoculaire</item>
+        <item>Sous-Cutanée</item>
+        <item>Orale</item>
+        <item>Cutanée</item>
+        <item>Rectale</item>
+        <item>Vaginale</item>
+        <item>Inhalation</item>
+
+    </string-array>
+
+</resources>

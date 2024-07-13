@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="8dp"  >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="#767573"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/information_patient"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/nom_patient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPatientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/prenom_patient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPatientFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/age_parient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPatientAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            android:textSize="16sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/taille_patient_cm"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPatientTail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/poids_patient"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPatientPoids"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/genre_patient"
+            android:textSize="16sp" />
+
+
+        <Spinner
+            android:id="@+id/spinnerPatientGenre"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background="#767573"
+            android:gravity="center"
+
+
+            android:text="@string/effets_indesirables"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/d_scription"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextEffetDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/date_apparition"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextEffetDateParution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/dur_e_effet"
+            android:textSize="16sp" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="5dp">
+
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/mois"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/mois"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:paddingStart="5dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+
+                android:paddingStart="5dp"
+                android:text="@string/jour"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/jour"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:paddingStart="5dp"
+                android:textSize="16sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingStart="5dp"
+                android:text="@string/heure"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/heure"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:paddingStart="5dp"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/next1P1"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#6160EE"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="5dp"
+            android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/questionP5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="16dp"
+
+        android:background="#767573"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Liste Declaration"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.example.pharmacovigilance.ItemFragment"
+        android:layout_width="match_parent"
+        android:layout_height="653dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ItemFragment1"
+        tools:listitem="@layout/fragment_item" />
+    <Button
+        android:id="@+id/retour"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:backgroundTint="#6200EE"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
+        android:text="Retour"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+</LinearLayout>

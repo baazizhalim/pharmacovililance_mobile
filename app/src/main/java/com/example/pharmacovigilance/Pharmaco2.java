@@ -1,0 +1,197 @@
+package com.example.pharmacovigilance;
+
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.pharmacovigilance.databinding.Pharmaco2Binding;
+
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.List;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Pharmaco2#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class Pharmaco2 extends Fragment {
+    static Declaration declaration;
+    private DatabaseManager dbManager;
+    private Pharmaco2Binding binding;
+    private LayoutInflater inflater;
+
+    public static Pharmaco2 newInstance() {
+        return new Pharmaco2();
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = Pharmaco2Binding.inflate(inflater, container, false);
+        this.inflater = inflater;
+        return binding.getRoot();
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        dbManager = new DatabaseManager(requireActivity().getApplicationContext());
+        declaration = MainActivity.declaration;
+        if (declaration.getMedicaments()[0] == null)declaration.getMedicaments()[0] = new Medicament();
+        binding.nomCommercial.setText(declaration.getMedicaments()[0].getNomCommercial());
+        binding.lot.setText(declaration.getMedicaments()[0].getLot());
+        binding.posologie.setText(declaration.getMedicaments()[0].getPosologie());
+        binding.dda.setText(declaration.getMedicaments()[0].getDateDebutAdministration().toString());
+        binding.dfa.setText(declaration.getMedicaments()[0].getDateFinAdministration().toString());
+        binding.encours.setChecked(declaration.getMedicaments()[0].isEncours());
+        binding.indication.setText(declaration.getMedicaments()[0].getIndication());
+
+        List<CharSequence> medicaments = dbManager.getAllMedicament();
+
+        Log.d("liste medic 2", medicaments.toString());
+        Spinner spinnerMed = (Spinner) binding.dci;
+// Create an ArrayAdapter using the string array and a default spinner layout.
+        ArrayAdapter<CharSequence> adapterMed = new ArrayAdapter<>(
+                this.requireContext(),
+                android.R.layout.simple_spinner_item,
+                medicaments
+        );
+// Specify the layout to use when the list of choices appears.
+        adapterMed.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner.
+        spinnerMed.setAdapter(adapterMed);
+        for (int i = 0; i < adapterMed.getCount(); i++) {
+            if (adapterMed.getItem(i).equals(declaration.getMedicaments()[0].getDci()))
+                spinnerMed.setSelection(i);
+        }
+
+
+        Spinner spinner = (Spinner) binding.voie;
+// Create an ArrayAdapter using the string array and a default spinner layout.
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this.requireContext(),
+                R.array.liste_voie,
+                android.R.layout.simple_spinner_item
+        );
+// Specify the layout to use when the list of choices appears.
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner.
+        spinner.setAdapter(adapter);
+        for (int i = 0; i < adapter.getCount(); i++) {
+            if (adapter.getItem(i).equals(declaration.getMedicaments()[0].getVoieAdministration()))
+                spinner.setSelection(i);
+        }
+
+        binding.next1P2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                declaration.getMedicaments()[0].setDci(binding.dci.getSelectedItem().toString());
+                declaration.getMedicaments()[0].setNomCommercial(binding.nomCommercial.getText().toString());
+                declaration.getMedicaments()[0].setLot(binding.lot.getText().toString());
+                declaration.getMedicaments()[0].setPosologie(binding.posologie.getText().toString());
+                declaration.getMedicaments()[0].setDateDebutAdministration(Date.valueOf(binding.dda.getText().toString()));
+                declaration.getMedicaments()[0].setDateFinAdministration(Date.valueOf(binding.dfa.getText().toString()));
+                declaration.getMedicaments()[0].setEncours(binding.encours.isChecked());
+                declaration.getMedicaments()[0].setIndication(binding.indication.getText().toString());
+                declaration.getMedicaments()[0].setVoieAdministration(binding.voie.getSelectedItem().toString());
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Pharmaco5 fragment = Pharmaco5.newInstance();
+                fragmentTransaction.replace(R.id.fragment_container_view, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
+        binding.ajouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                declaration.getMedicaments()[0].setDci(binding.dci.getSelectedItem().toString());
+                declaration.getMedicaments()[0].setNomCommercial(binding.nomCommercial.getText().toString());
+                declaration.getMedicaments()[0].setLot(binding.lot.getText().toString());
+                declaration.getMedicaments()[0].setPosologie(binding.posologie.getText().toString());
+                declaration.getMedicaments()[0].setDateDebutAdministration(Date.valueOf(binding.dda.getText().toString()));
+                declaration.getMedicaments()[0].setDateFinAdministration(Date.valueOf(binding.dfa.getText().toString()));
+                declaration.getMedicaments()[0].setEncours(binding.encours.isChecked());
+                declaration.getMedicaments()[0].setIndication(binding.indication.getText().toString());
+                declaration.getMedicaments()[0].setVoieAdministration(binding.voie.getSelectedItem().toString());
+
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Pharmaco3 fragment = Pharmaco3.newInstance();
+                fragmentTransaction.replace(R.id.fragment_container_view, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        binding.dda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog(binding.dda);
+
+            }
+        });
+
+        binding.dfa.setOnClickListener(new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View v) {
+                                               openDialog(binding.dfa);
+
+                                           }
+                                       }
+        );
+        binding.encours.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    binding.dfa.setEnabled(false);
+                    //binding.dfa.setText("");
+                } else {
+                    binding.dfa.setEnabled(true);
+                    //binding.dfa.setText(declaration.getMedicaments()[0].getDateFinAdministration().toString());
+                }
+            }
+        });
+    }
+
+
+    private void openDialog(TextView t) {
+        Calendar rightNow = Calendar.getInstance();
+        DatePickerDialog dialog = new DatePickerDialog(this.requireContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String mois = "";
+                if (month < 9) mois = "0" + (month + 1);
+                else mois = String.valueOf(month + 1);
+                String jour = "";
+                if (dayOfMonth < 10) jour = "0" + String.valueOf(dayOfMonth);
+                else jour = String.valueOf(dayOfMonth);
+                String date = String.valueOf(year) + "/" + mois + "/" + jour;
+                date = date.replace('/', '-');
+                t.setText(date);
+            }
+        }, rightNow.get(Calendar.YEAR), rightNow.get(Calendar.MONTH), rightNow.get(Calendar.DATE));
+        dialog.show();
+    }
+
+}

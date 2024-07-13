@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:text="@string/welcome_to_pharmacovigilance"
+        android:textAlignment="gravity"
+        android:textColor="#6200EE"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:background="#6200EE"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/identifiez_vous"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/emailText"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:background="#767573"
+        android:gravity="center"
+        android:text="@string/email"
+        android:textAlignment="inherit"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#767573"
+
+        android:hint="@string/tapez_votre_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"/>
+
+    <TextView
+        android:id="@+id/passText"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+
+        android:layout_margin="5dp"
+        android:background="#767573"
+        android:gravity="center"
+        android:text="@string/mot_de_passe"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/passEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#767573"
+        android:hint="@string/mot_de_passe"
+        android:inputType="textPassword"
+        android:minHeight="48dp"/>
+
+    <Button
+        android:id="@+id/demarrer"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_margin="24dp"
+        android:background="#6200EE"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:text="@string/let_s_play"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/inscription"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center|center_vertical"
+        android:text="@string/inscription"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</LinearLayout>
+</ScrollView>

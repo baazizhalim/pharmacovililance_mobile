@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="8dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_margin="10dp"
+            android:background="#767573"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/effets_indesirables"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Traitement Symptomatique de la réaction indésirable"
+            android:padding="10dp"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/radioButtonMedicamenteux"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="OUI"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/radioButtonNonMedicamenteux"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="NON"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Description du traitement"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/descriptionTraitementReactionIndesirable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Evolution"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonDisparaition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disparaition"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonInconnue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inconnue"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonEncours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En cours"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDeces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Déces"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Réexposition"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textSize="16sp">
+
+            <CheckBox
+                android:id="@+id/checkBoxRexpo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reexposition"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEffetReexpo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:textSize="16sp"
+                android:text="Réapparition EI." />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Examen Complémentaire"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBoxExamenComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Effectué"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEffetExamenComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="Positif"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Antécédant/Histoire de la maladie"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/antecedant"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:padding="5dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Autres explication EI/Facteur de risque"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/autreExplication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingStart="5dp"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/send"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="#6200EE"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
+        android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+        android:text="SEND"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+         />
+</LinearLayout>
+</ScrollView>
